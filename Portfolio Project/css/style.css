@@ -1,0 +1,875 @@
+/* google fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: #000;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ================================
+header CSS
+=============================== */
+
+header{
+    height: 80px;
+    position: relative;
+    display: flex;
+    justify-content:center;
+    /* align-items: center; */
+}
+
+header.active{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(26, 26, 26,.80);
+}
+
+#navbar{
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar > a{
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links{
+    margin-bottom: 0;
+}
+
+.nav-links li{
+    display: inline-block;
+    list-style: none;
+    margin-right: 1rem;
+    position: relative;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: #fff;
+    font-size:1rem;
+    position: relative;
+    transition: .30s ease;
+}
+
+.nav-links li a::after{
+    position: absolute;
+    content: '';
+    bottom: -5px;
+    left: 0;
+    height:2px;
+    width:0;
+    transition: .30s ease;
+    background-color: #28a745;
+}
+
+.nav-links li a:hover::after{
+    width: 50%;
+}
+
+.nav-links li a:hover{
+    color:#28a745 ;
+}
+
+.nav-links li a i{
+    font-size: 14px;
+    margin-left: .6rem;
+}
+
+/*==============================
+dropdown menu css
+================================  */
+
+.nav-links li > ul{
+    position: absolute;
+    top:100px;
+    left: 0;
+    width:180px;
+    opacity: 0;
+    visibility: hidden;
+    padding:20px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #1A1A1A;
+    background-color: #1A1A1A;
+    transition: .40s ease;
+}
+
+.nav-links li:hover > ul{
+    top:30px;
+    opacity:1;
+    visibility:visible;
+}
+
+.nav-links li > ul > li{
+    margin-bottom:1rem;
+    width: 100%;
+    position: relative;
+}
+
+.nav-links li > ul li:last-child{
+    margin-bottom:0;
+}
+
+.nav-links li > ul li a{
+    text-align: left;
+    text-wrap: nowrap;
+    font-size: 1rem;
+}
+
+.nav-links li > ul li a i{
+    float: right;
+    line-height: 22px;
+}
+
+.nav-links li > ul li a:hover::after{
+    width: 0;
+}
+
+/*=============================
+deep dropdown menu CSS
+=============================== */
+
+.nav-links li > ul li > ul{
+    position: absolute;
+    top:0;
+    left:-220px;
+    opacity: 0;
+    visibility: hidden;
+    width: 180px;
+    padding:20px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #1A1A1A;
+    background-color: #1A1A1A;
+}
+
+.nav-links li > ul li:hover > ul{
+    left:-180px;
+    top:0;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ======================================
+hero sectoin CSS
+========================================= */
+
+#hero-section{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('../assests/images/hero-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+#hero-detail{
+    position: relative;
+}
+
+.hero-intro{
+    position:absolute;
+    top:35%;
+    left:0;
+    transform: translate(-50% -50%);
+}
+
+.hero-intro h1{
+    font-size:3.5rem;
+    color: #fff;
+    font-weight: bold;
+    word-spacing: 1rem;
+    text-wrap: nowrap;
+}
+
+.hero-intro p{
+    color: #fff;
+    font-size:1.7rem;
+    letter-spacing: 1.8px;
+}
+
+.hero-intro p span.typed{
+    position: relative;
+}
+
+.hero-intro p span.typed::after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #28a745;
+}
+
+.hero-intro .list-unstyled li:not(:last-child){
+    margin-right:1.5rem;
+}
+
+.hero-intro .list-unstyled li a i{
+    height:40px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    line-height:40px;
+    font-size: 1rem;
+    background-color: #1A1A1A;
+    transition: .30s ease;
+    text-wrap: nowrap;
+}
+
+.hero-intro .list-unstyled li a i:hover{
+    background-color: #28a745;
+}
+
+#about-section h1,
+#resume-section h1,
+#services-section h1,
+#contact-section h1,
+#about-section p,
+#services-section p,
+#contact-section p,
+#resume-section p{
+    color: #fff;
+}
+
+/* ================================
+about section CSS
+=================================== */
+
+#about-section p{
+    font-size:1rem;
+    font-size: 15px;
+}
+
+.about-detail h1,
+.about-detail h1,
+.about-detail p{
+    font-size:1.6rem;
+    color: #fff;
+}
+
+.about-detail p{
+    font-size: 1rem;
+    word-break: break-all;
+}
+
+.about-list-detail li {
+    color: #fff;
+    margin-bottom:1.5rem;
+}
+
+#about-section .user-stat{
+    position: relative;
+    background-color: #1A1A1A;
+}
+
+#about-section .user-stat h4{
+    color: #929090;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+#about-section .user-stat span{
+    color:#fff;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+#about-section .user-stat i{
+    height: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    color: #28a745;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    background-color: #1A1A1A;
+    border: 2px solid #000;
+    font-size: 1.5rem;
+}
+
+#about-section #testimonials h1,
+#about-section #testimonials h5,
+#about-section #interested-feature h5,
+#about-section #interested-feature h1,
+#about-section .skill-head h5,
+#about-section .skill-head h1{
+    color: #4d4d4d;
+    position: relative;
+    text-transform: uppercase;
+}
+
+#about-section #interested-feature h5,
+#about-section #testimonials h5,
+#about-section .skill-head h5{
+    font-size:1rem;
+}
+
+#about-section #interested-feature h5::after,
+#about-section #testimonials h5::after,
+#about-section .skill-head h5::after{
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 100px;
+    top:50%;
+    left:12%;
+    transform: translate(-50%,-50%);
+    background-color: #28a745;
+}
+
+#about-section #interested-feature h5::after{
+    left: 14%;
+}
+
+#about-section #testimonials h5::after{
+    left: 16%;
+}
+
+#about-section #interested-feature h1,
+#about-section #testimonials h1,
+#about-section .skill-head h1{
+    color: #fff;
+    font-size: 1.9rem;
+}
+
+#about-section .skill-progress p span{
+    color: #fff;
+    font-size: 1rem;
+    font-weight:normal;
+    text-transform: uppercase;
+}
+
+#html,
+#css,
+#javascript,
+#PHP,
+#wordpress,
+#photoshop{
+    width: 0;
+    transition: width .55s ease;
+}
+
+#html.active{
+    width: 100%;
+}
+
+#css.active{
+    width: 90%;
+}
+
+#javascript.active{
+    width: 75%;
+}
+
+#PHP.active{
+    width: 80%;
+}
+
+#wordpress.active{
+    width: 90%;
+}
+
+#photoshop.active{
+    width: 55%;
+}
+
+#about-section .skill-progress p span:nth-child(2){
+    float: right;
+}
+
+#about-section #interested-feature .box{
+    cursor: pointer;
+    transition: .30s ease;
+    background-color: #1A1A1A;
+    border: 1px solid #4d4d4d;
+}
+
+#about-section #interested-feature .box:hover{
+    border: 1px solid #28a745;
+}
+
+#about-section #interested-feature .box i{
+    color: #FFBB27;
+    font-size:1.5rem;
+    margin-right: 1rem;
+}
+
+#about-section #interested-feature .box span{
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.slider-wrapper{
+    padding-top: 30px;
+    padding-bottom: 150px;
+}
+
+.slider-wrapper .content{
+    background-color: #1A1A1A;
+    color: #fff;
+    font-style: italic;
+    border-radius:8px;
+    padding: 10px 15px;
+    font-size: .9rem;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.slider-wrapper .content i{
+    font-size: 1.3rem;
+    margin: 0 .5rem;
+    color:#28a745;
+}
+
+.slider-wrapper .content .testi-person{
+    text-align: center;
+    position: absolute;
+    bottom:-80px;
+    left: 0;
+}
+
+.slider-wrapper .content .testi-person img{
+    height: 80px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 4px solid #000;
+}
+
+.slider-wrapper .content .testi-person h3{
+    font-size: 1rem;
+    color: #fff;
+    font-weight: normal;
+    margin: 0;
+    font-style: none;
+}
+
+.slider-wrapper .content .testi-person span{
+    color: #4d4d4d;
+    font-size:1rem;
+    font-style: none;
+}
+
+
+/* swiper buttets CSS  */
+.swiper-pagination span{
+    border: 2px solid #28a745;
+    background: none;
+    border-radius: 50%;
+}
+
+.summary > h1,
+.education > h1,
+.experience > h1{
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 550;
+    margin-bottom: 15px;
+}
+
+.summary-content,
+.experience-content,
+.education-content{
+    position: relative;
+    margin-bottom: 20px;
+    padding-left:20px;
+    border-left: 2px solid #28a745;
+}
+
+.summary-content::after,
+.experience-content::after,
+.education-content::after{
+    position: absolute;
+    content: '';
+    top:0;
+    left: -10px;
+    height:18px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid #28a745;
+    background: #000;
+}
+
+.summary-content h3,
+.education-content h3,
+.experience-content h3{
+    color: #929090;
+    font-size: 1.2rem;
+    font-weight: 550;
+    text-transform: uppercase;
+}
+
+.summary-content p,
+.experience-content p,
+.education-content p{
+    font-size: .9rem;
+    font-style: italic;
+    color: #fff;
+    font-weight: normal;
+}
+
+.summary-content ul.list-group .list-item,
+.experience-content ul.list-group .list-item{
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.education-content span,
+.experience-content span{
+    color: #fff;
+    font-size: 1rem;
+    font-style: italic;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.experience-content:nth-child(2) ul.list-group .list-item:last-child{
+    margin-bottom:0;
+}
+
+
+/*================================
+services section CSS
+==================================*/
+
+#services .box{
+    text-align: center;
+    padding: 40px 60px;
+    transition: .40s ease;
+    cursor: pointer;
+    background-color: #1A1A1A;
+}
+
+#services .box:hover{
+    background-color: #18D26E;
+}
+
+#services .box i{
+    height:60px;
+    aspect-ratio: 1;
+    line-height: 60px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #1A1A1A;
+    border-radius: 3px;
+    transition: .40s ease;
+    background-color: #18D26E;
+}
+
+#services .box h3{
+    margin:1rem 0;
+    color: #fff;
+    font-size: 1.3rem;
+    transition: .40s ease;
+}
+
+#services .box p{
+    color: #fff;
+    font-size: .9rem;
+    margin: 0;
+    transition: .40s ease;
+}
+
+#services .box:hover i{
+    color: #18D26E;
+    background-color: #1A1A1A;
+}
+
+#services .box:hover p,
+#services .box:hover h3{
+    color: #1A1A1A;
+}
+
+/*=============================
+ contact section CSS
+============================ */
+
+#contact .box{
+    display: flex;
+    text-align: left;
+}
+
+#contact .box div:first-child{
+    height: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    margin-right: 15px;
+    background-color: #18D26E;
+}
+
+#contact .box div:first-child i{
+    font-size: 1.3rem;
+}
+
+#contact .box div:last-child span{
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+    display: inline-block;
+}
+
+#contact .box div:last-child p{
+    font-size: .9rem;
+}
+
+#contact .box ul.list-unstyled li.list-inline-item i{
+    color: #4d4d4d;
+    font-size: 1.5rem;
+}
+
+#form input,
+#form textarea{
+    background: none;
+    border-radius:0;
+    box-shadow: none;
+    font-size: .9rem;
+    height: 40px;
+    transition: .30s ease;
+    border: 1px solid #4d4d4d;
+}
+
+#form textarea{
+    min-height: 250px;
+}
+
+#form input:focus,
+#form textarea:focus{
+    border: 1px solid #18D26E;
+}
+
+#form [type='submit']{
+    height: 45px;
+    width: 180px;
+    border-radius: 25px;
+    color: #1A1A1A;
+    background-color: #18D26E;
+    border: none;
+    outline: none;
+    transition: .30s ease;
+}
+
+#form [type='submit']:hover{
+    background-color: #14c265;
+}
+
+/*===========================
+ footer section CSS
+============================= */
+
+footer{
+    text-align: center;
+    color: #fff;
+    padding: 25px 0;
+    background-color: #1A1A1A;
+}
+
+#footer h1{
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin: 1rem 0;
+}
+
+#footer p{
+    font-size: .9rem;
+    font-style: italic;
+    font-weight: normal;
+}
+
+#footer ul.list-unstyled .list-inline-item i{
+    height: 40px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    line-height: 40px;
+    color: #1A1A1A;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: .30s ease;
+    background-color: #18D26E;
+    margin: 1rem 0;
+}
+
+#footer ul.list-unstyled .list-inline-item i:hover{
+    background-color: #14c265;
+}
+
+/*============================
+ hide menu icon
+==============================*/
+
+#navbar .menu-icon{
+    display: none;
+}
+
+
+/* =============================
+responsive CSS
+===============================*/
+
+@media screen and (max-width:992px) {
+    #navbar ul.nav-links{
+        position: absolute;
+        top:100%;
+        left: 0;
+        height:0;
+        opacity: 0;
+        visibility: hidden;
+        width: 100%;
+        z-index: 999;
+        padding: 15px 25px;
+        background-color: #000000;
+    }
+
+    #navbar ul.nav-links.active{
+        opacity: 1;
+        visibility: visible;
+        height: 100vh;
+    }
+
+    #navbar ul.nav-links li{
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .nav-links li a:hover::after{
+        width: 0;
+    }
+
+    #navbar ul.nav-links li a i,
+    #navbar ul.nav-links li > ul li a i{
+        float: right;
+        height: 30px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: #1A1A1A;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    #navbar ul.nav-links li > ul li a i{
+        background-color: #000;
+    }
+
+    #navbar ul.nav-links li > ul,
+    #navbar ul.nav-links li > ul li > ul{
+        position: relative;
+        opacity: 1;
+        top:10px;
+        right: 0;
+        left: 0;
+        width: 100%;
+        padding:15px;
+        display: none;
+        box-shadow: none;
+        visibility: visible;
+        background-color: #1A1A1A;
+    }
+
+    #navbar ul.nav-links li > ul li > ul{
+        padding:5px 0 5px 20px;
+    }
+
+    #navbar ul.nav-links li > ul li a{
+        color: #fff;
+    }
+
+    #navbar ul.nav-links li > ul.active{
+        display: block;
+    }
+
+    #navbar .menu-icon {
+        display: block;
+    }
+    
+    #navbar .menu-icon i{
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    #navbar .menu-icon i.fa-xmark{
+        display: none;
+    }
+
+    #about-section #interested-feature h5::after,
+    #about-section #testimonials h5::after,
+    #about-section .skill-head h5::after{
+        left: 25%;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    #contact .box{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #contact .box div:first-child{
+        margin-right: 0 !important;
+        margin-bottom: 15px;
+    }
+
+    #about-section #interested-feature h5::after,
+    #about-section #testimonials h5::after,
+    #about-section .skill-head h5::after{
+        left:35%;
+    }
+}
+
+@media screen and (max-width:438px) {
+
+    #hero-section{
+        background-image: url('../assests/images/hero-bg-mobile.JPG');
+    }
+
+    .hero-intro{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50% ,-50%);
+    }
+
+    .hero-intro h1{
+        font-size: 2.5rem;
+    }
+
+    #about-section #interested-feature h5::after,
+    #about-section #testimonials h5::after,
+    #about-section .skill-head h5::after{
+        left:50%;
+    }
+}
